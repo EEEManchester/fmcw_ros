@@ -3,7 +3,7 @@
 
 # Installation
  
- This repo is structured as a ROS package.  Navigate to your preferred workspace's src folder e.g. `~catkin_ws/src` or `husky_ws/src`, clone this repo using `git clone --branch UoMHW https://github.com/SHIVOH/fmcw.git`.
+ This repo is structured as a ROS package.  Navigate to your preferred workspace's src folder e.g. `~catkin_ws/src` or `husky_ws/src`, clone this repo using `git clone --branch main https://github.com/EEEManchester/fmcw_ros.git`.
  
 Change to your workspace top folder `cd ..` and perform a `catkin_make`.
 
