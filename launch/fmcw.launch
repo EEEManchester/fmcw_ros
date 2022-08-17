@@ -1,0 +1,24 @@
+<launch>
+  
+  <arg name="sensor_frame" default="fmcw_antenna_link" />
+  <arg name="port" default="/dev/ttyUSB0" />
+  
+  <!-- Launch node to drive radar readings -->
+  <!-- Parameters can either be defined as part of the node, or loaded via a yaml file -->
+  <node pkg="fmcw" type="fmcw_radar.py" name="fmcw_driver" output="screen">
+    <!-- rosparam file="$(find fmcw)/config/fft.yaml" / HOW TO LOAD VIA YAML, PARAM NAMES MUST MATCH INCLUDING _: SWAP -->
+    <param name="sensor_frame" value="$(arg sensor_frame)" />
+    <param name="port"         value="$(arg port)" />
+    <param name="baud"         value="115200" />
+    <param name="FREQUENCY_START"  value="24.0" />
+    <param name="FREQUENCY_STOP"   value="25.5" />
+    <param name="FREQUENCY_POINTS" value="1501" />
+    <param name="SWEEP_TIME"       value="0.3"  />
+    <!-- param name="SWEEP_NUMBERS"    value="1" /-->
+    <!-- param name="HARDWARE_SYSTEM"  value="RS3400K" /-->
+    <!-- param name="TRIG_SOURCE"      value="IMMEDIATE" /-->
+    <param name="AMPLITUDE_BIN"    value="5" />
+  </node>
+
+</launch>
+
